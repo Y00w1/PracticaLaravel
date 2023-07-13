@@ -20,4 +20,9 @@ class Watch extends Model
     public function getAvailabilityAttribute(){
         return $this->stock > 0;
     }
+    public function scopeFilter($query, $filters){
+        if(isset($filters['search'])){
+            $query->where('name', 'like', '%'.request('search').'%');
+        }
+    }
 }

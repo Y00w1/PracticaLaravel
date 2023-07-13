@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2>Edit</h2>
+        <h2 class="text-white">Edit</h2>
     </x-slot>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -35,6 +35,10 @@
                                 <input type="number" id="stock" name="stock"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     value="{{old('stock', $watch->stock)}}" required>
+                            </div>
+                            <div>
+                                Last image
+                                <img class="w-[100px] h-[100px] object-cover object-center rounded-t-lg" src={{"/storage/$watch->image"}} alt="watch image" />
                             </div>
                             <div>
                                 <label for="description"

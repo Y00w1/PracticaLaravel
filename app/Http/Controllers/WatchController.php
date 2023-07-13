@@ -14,8 +14,7 @@ class WatchController extends Controller
      */
     public function index()
     {
-        $watches = Watch::paginate();
-        return view('shop', compact('watches'));
+        return view('shop', ['watches' => Watch::latest()->filter(request(['search']))->paginate(1)]);
     }
 
     /**
